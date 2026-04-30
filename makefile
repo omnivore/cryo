@@ -1,4 +1,4 @@
-VERSION=0.0.5
+VERSION=0.1.0
 SRC=lib/cryo.js
 DEV=build/cryo-$(VERSION).js
 
@@ -6,8 +6,7 @@ setup:
 	npm install
 
 test:
-	node_modules/.bin/mocha -R spec --bail ./test/*.test.js
-	open test/browser.html
+	npm test
 
 build:
 	@echo "Development: $(DEV)"
