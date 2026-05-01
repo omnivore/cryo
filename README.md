@@ -15,24 +15,11 @@ Cryo.stringify() and Cryo.parse() improve on JSON in these circumstances:
 
 ## Installation
 
-### node.js
+This package is not published to npm. Consume it as a git dependency by
+pinning to a commit SHA in your `package.json`:
 
 ```
-$ npm install cryo
-```
-
-### browser
-
-With Bower:
-
-```
-bower install cryo
-```
-
-Add the [latest minified build](https://github.com/hunterloftis/cryo/tree/master/build) to your project as a script:
-
-```html
-<script type='text/javascript' src='cryo-0.0.4.js'></script>
+"cryo": "git+ssh://<git-host>/<owner>/cryo.git#<commit-sha>"
 ```
 
 ## Use
@@ -239,11 +226,20 @@ Here is the stringified result from the hello, world example:
 
 ## Tests
 
-Tests require node.js.
+### Node suite
 
 ```
-$ git clone git://github.com/hunterloftis/cryo.git
-$ cd cryo
-$ make setup
-$ make test
+npm install
+npm test
 ```
+
+### Browser suite
+
+The browser suite covers DOM-reference behavior the Node suite can't
+exercise. Serve the repo root and open the test page:
+
+```
+npx http-server . -p 8765
+```
+
+Then open http://localhost:8765/test/browser.html in a browser.
